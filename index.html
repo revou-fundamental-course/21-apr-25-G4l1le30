@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konversi Celcius ke Fahrenheit</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Konversi Suhu</title>
+  
 </head>
 <body>
-    <p>Type a value to convert to Fahrenheit</p>
-    <p>
-        <label>Celcius</label>
-        <input id="input-celcius" type="number"placeholder="Celsius"oninput="temperatureConverter(this.value)" onchange = "temperature-converter(this.value)">
-    </p>
-    <p>Fahrenheit: <span id="output-fahrenheit">NaN</span></p>
+  <div class="container">
+    <h2>Konversi Suhu</h2>
+    <form id="form-konversi">
+      <label for="suhu">Masukkan suhu:</label>
+      <input type="number" id="suhu" required>
+      <label for="jenis-suhu">Pilih jenis suhu:</label>
+      <select id="jenis-suhu">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+      </select>
+      <button id="btn-konversi">Konversi</button>
+      <p class="hasil" id="hasil-konversi"></p>
+    </form>
+  </div>
+
     <script src="js/script.js"></script>
 </body>
 </html>
