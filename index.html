@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Konversi Celcius ke Fahrenheit</title>
 </head>
 <body>
-    
+    <p>Type a value to convert to Fahrenheit</p>
+    <p>
+        <label>Celcius</label>
+        <input id="input-celcius" type="number"placeholder="Celsius"oninput="temperatureConverter(this.value)" onchange = "temperature-converter(this.value)">
+    </p>
+    <p>Fahrenheit: <span id="output-fahrenheit">NaN</span></p>
+    <script src="js/script.js"></script>
 </body>
 </html>
