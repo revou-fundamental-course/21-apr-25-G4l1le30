@@ -150,29 +150,28 @@ body {
 
 
 #suhu {
-  box-sizing: border-box; /* Ensures padding is included in width */
+  box-sizing: border-box; 
   width: 100%;
-  max-width: 100%; /* Prevents overflow */
+  max-width: 100%; 
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 480px) {
   .container {
-    width: 95%; /* Slightly reduce container width */
-    margin: 20px auto; /* Maintain center alignment */
-    padding: 1.2rem; /* Adjust padding */
+    width: 95%; 
+    margin: 20px auto;
+    padding: 1.2rem;
   }
 
   #form-konversi {
-    gap: 1rem; /* Reduce gap between elements */
+    gap: 1rem; 
   }
 
   #suhu {
-    padding: 0.6rem 0.8rem; /* Adjust padding */
-    font-size: 0.9rem; /* Slightly reduce font size */
+    padding: 0.6rem 0.8rem; 
+    font-size: 0.9rem;
   }
 
-  /* Ensure no horizontal scrolling */
+
   body {
     overflow-x: hidden;
     padding: 10px;
