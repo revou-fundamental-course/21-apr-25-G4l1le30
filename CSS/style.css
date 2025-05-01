@@ -1,84 +1,180 @@
-/* style.css */
+:root {
+  --primary-color: #4361ee;
+  --secondary-color: #3f37c9;
+  --accent-color: #4895ef;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --success-color: #4cc9f0;
+  --border-radius: 12px;
+  --box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  }
-  
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background-color: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: var(--transition);
+}
+
+.container:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+#form-konversi {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#form-konversi label {
+  font-weight: 600;
+  color: var(--dark-color);
+  margin-bottom: -0.5rem;
+}
+
+#form-konversi input,
+#form-konversi select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  background-color: var(--light-color);
+}
+
+#form-konversi input:focus,
+#form-konversi select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2);
+}
+
+#form-konversi input {
+  font-weight: 600;
+  color: var(--dark-color);
+}
+
+#form-konversi select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+#btn-konversi {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.5rem;
+}
+
+#btn-konversi:hover {
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+}
+
+#btn-konversi:active {
+  transform: translateY(0);
+}
+
+#hasil-konversi {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: var(--transition);
+  border-left: 4px solid var(--accent-color);
+}
+
+#hasil-konversi::before {
+  font-weight: 400;
+  color: #6c757d;
+}
+
+
+#suhu {
+  box-sizing: border-box; /* Ensures padding is included in width */
+  width: 100%;
+  max-width: 100%; /* Prevents overflow */
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
   .container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    width: 95%; /* Slightly reduce container width */
+    margin: 20px auto; /* Maintain center alignment */
+    padding: 1.2rem; /* Adjust padding */
   }
-  
-  .container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+
+  #form-konversi {
+    gap: 1rem; /* Reduce gap between elements */
   }
-  
-  .form-konversi {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+  #suhu {
+    padding: 0.6rem 0.8rem; /* Adjust padding */
+    font-size: 0.9rem; /* Slightly reduce font size */
   }
-  
-  .form-konversi label {
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #666;
-  }
-  
-  .form-konversi input[type="number"] {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
+
+  /* Ensure no horizontal scrolling */
+  body {
+    overflow-x: hidden;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 18px;
   }
-  
-  .form-konversi select {
-    width: 100%;
-    height: 40px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 18px;
-  }
-  
-  .form-konversi button {
-    width: 100%;
-    height: 40px;
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-  }
-  
-  .form-konversi button:hover {
-    background-color: #3e8e41;
-  }
-  
-  .hasil {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  .hasil::before {
-    content: "Hasil: ";
-    font-weight: normal;
-    font-size: 18px;
-    color: #666;
-  }
+}
